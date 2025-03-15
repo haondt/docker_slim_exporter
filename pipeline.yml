@@ -1,0 +1,14 @@
+tasks:
+  - type: docker-build
+    image: docker_slim_exporter
+    auto:
+      - source: push
+        has_tag: true
+        tag_source: tag
+      - source: push
+        has_tag: true
+        tag_source: latest
+    context: .
+    registries:
+      - gitlab
+      - docker-hub

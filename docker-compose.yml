@@ -1,0 +1,15 @@
+services:
+  docker-slim-exporter:
+    image: haumea/docker_slim_exporter
+    container_name: docker-slim-exporter
+    ports:
+      - "9090:9090"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    environment:
+      - METRICS_PREFIX=docker
+      - SCRAPE_INTERVAL=15
+      - INCLUDE_STOPPED=true
+      - DISABLE_DEFAULT_METRICS=true
+      - INCLUDE_LABELS=true
+      - LOG_LEVEL=INFO
