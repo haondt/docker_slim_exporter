@@ -1,6 +1,9 @@
 tasks:
   - type: docker-build
     image: docker_slim_exporter
+    platforms:
+      - linux/arm64
+      - linux/amd64
     auto:
       - source: push
         has_tag: true
