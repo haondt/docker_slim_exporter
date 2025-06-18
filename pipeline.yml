@@ -4,6 +4,7 @@ tasks:
     platforms:
       - linux/arm64
       - linux/amd64
+    qemu: true
     auto:
       - source: push
         has_tag: true
